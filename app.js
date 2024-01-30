@@ -62,7 +62,7 @@ async function proxyService(req) {
       response: data,
     };
 
-    console.log(logObject);
+    console.log(JSON.stringify(logObject));
 
     return [status, data];
   } catch (error) {
@@ -79,11 +79,11 @@ async function proxyService(req) {
       if (typeof error?.response?.data === 'string') {
         message = error.response.data;
       }
-      console.log(errorLogObject);
+      console.log(JSON.stringify(errorLogObject));
       const errResponse = message ? message : { ...error?.response?.data };
       return [errorStatusCode, errResponse];
     } else {
-      console.log(errorLogObject);
+      console.log(JSON.stringify(errorLogObject));
       return [500, 'An unknown error occured'];
     }
   }
