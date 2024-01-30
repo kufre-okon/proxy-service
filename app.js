@@ -92,7 +92,7 @@ async function proxyService(req) {
 
 // error handler
 app.use(function (err) {
-  console.log(err, 'APP ERRR');
+  //console.log(err, 'APP ERRR');
 });
 
 module.exports = app;
